@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "exampledb",
+    "database": "espresso_db",
     "host": "localhost",
     "dialect": "mysql"
   },
