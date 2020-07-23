@@ -65,8 +65,8 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var socialPost = {
-    post_title: $("post-title").val().trim(),
-    post_body: $("post-body").val().trim()
+    post_title: $("#post-title").val().trim(),
+    post_body: $("#post-body").val().trim()
   };
 
   if (!(socialPost.post_title && socialPost.post_body)) {
@@ -78,8 +78,8 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $("post-title").val("");
-  $("post-body").val("");
+  $("#post-title").val("");
+  $("#post-body").val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
