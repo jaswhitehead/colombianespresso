@@ -6,14 +6,14 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveExample: function(socialPost) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/post",
+      data: JSON.stringify(socialPost)
     });
   },
   getExamples: function() {
@@ -64,22 +64,22 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var socialPost = {
+    post_title: $("post-title").val().trim(),
+    post_body: $("post-body").val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(socialPost.post_title && socialPost.post_body)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
+  API.saveExample(socialPost).then(function() {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $("post-title").val("");
+  $("post-body").val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
