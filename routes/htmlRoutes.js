@@ -19,6 +19,14 @@ module.exports = function(app) {
       });
     });
   });
+  // Load classifieds page
+  app.get("/classifieds", function(req, res) {
+    db.Classified.findAll({}).then(function(adds) {
+      res.render("classifieds", {
+        add: adds
+      });
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
