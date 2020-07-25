@@ -28,6 +28,15 @@ module.exports = function(app) {
     });
   });
 
+  // one classified
+  app.get("/classifieds/:id", function(req, res) {
+    db.Classified.findOne({ where: { id: req.params.id } }).then(function(adds) {
+      res.render("add", {
+        add: adds
+      });
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
