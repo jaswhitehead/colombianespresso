@@ -1,4 +1,4 @@
-	<nav class="white" role="navigation">
+<nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Login / Sign Up</a></li>
@@ -74,33 +74,36 @@
     </div>
     <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
   </div>
+
 <!-- Start of Classifieds Code -->
 <div id="classifieds">
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
                 <h1>{{msg}}</h1>
-                <h2>This is our Home Page!</h2>
+                <h2>Personals / Classifieds</h2>
                 <form class="clearfix mb-4" action="POST">
                     <div class="form-group">
-                        <label for="example-text">Example Text</label>
+                        <h4>Create Your Ad:</h4>
+                        <br>
+                        <label for="example-description"><h6><strong>Add Title:</strong></h6></label>
                         <input type="text" id="add-name" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
+                            placeholder="ex. Microsoft Xbox One S">
                     </div>
                     <div class="form-group">
-                        <label for="example-description">Example Description</label>
+                        <label for="example-description"><h6><strong>Add Description:</strong></h6></label>
                         <textarea class="form-control" id="add-description" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
+                            placeholder="Enter Description"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="example-location">Example Location</label>
+                        <label for="example-location"><h6><strong>Enter Location:</strong></h6></label>
                         <textarea class="form-control" id="add-location" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
+                            placeholder="ex. 123 Spooner st., Kent, CT. 55555"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="example-price">Example Price</label>
+                        <label for="example-price"><h6><strong>Enter Price:</strong></h6></label>
                         <textarea class="form-control" id="add-price" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
+                            placeholder="ex. $150 (obo)"></textarea>
                     </div>
                     <button id="submit" class="btn btn-primary float-right">Submit</button>
                 </form>
