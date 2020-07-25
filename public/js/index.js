@@ -18,13 +18,13 @@ var API = {
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/getPost",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/post/" + id,
       type: "DELETE"
     });
   }
@@ -33,10 +33,13 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+    var $textPost = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(example.post_title)
+        .attr("href", "/post/" + example.id);
+
+      var $p = $("<p>").text(example.post_body);
+      
 
       var $li = $("<li>")
         .attr({
@@ -44,18 +47,21 @@ var refreshExamples = function() {
           "data-id": example.id
         })
         .append($a);
+        
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
 
+      $li.append($p)
       $li.append($button);
+
 
       return $li;
     });
 
     $exampleList.empty();
-    $exampleList.append($examples);
+    $exampleList.append($textPost);
   });
 };
 
