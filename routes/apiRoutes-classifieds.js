@@ -2,8 +2,15 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
+
   app.get("/api/getClassifieds", function(req, res) {
-    db.Classified.findAll({}).then(function(dbExamples) {
+    var query = {};
+    if(req.query.userID){
+      query.userID = req.query.userID
+    }
+    db.Classified.findAll({
+      where: query
+    }).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
