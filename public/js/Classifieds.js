@@ -12,19 +12,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/add",
+      url: "api/classifieds",
       data: JSON.stringify(addPosting)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/getAdd",
+      url: "api/getClassifieds",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/add/" + id,
+      url: "api/classifieds/" + id,
       type: "DELETE"
     });
   }
@@ -36,7 +36,7 @@ var refreshExamples = function() {
     var $textPost = data.map(function(example) {
       var $a = $("<a>")
         .text(example.listing_name)
-        .attr("href", "/add/" + example.id);
+        .attr("href", "/classifieds/" + example.id);
 
       var $p = $("<p>").text(example.listing_description);
       var $pTwo = $("<p>").text(example.listing_location);
