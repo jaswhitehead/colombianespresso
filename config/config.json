@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Gamecock@33",
+    "password": "password",
     "database": "espresso_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Gamecock@33",
+    "password": "password",
     "database": "espresso_db",
     "host": "localhost",
     "dialect": "mysql",
