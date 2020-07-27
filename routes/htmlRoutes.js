@@ -21,6 +21,7 @@ module.exports = function(app) {
       });
     });
   });
+  
   // Load classifieds page
   app.get("/classifieds", function(req, res) {
     db.Classified.findAll({}).then(function(adds) {
@@ -39,6 +40,15 @@ module.exports = function(app) {
     });
   });
 
+   // Load Job Search Page
+   app.get("/search", function(req, res) {
+    db.createPost.findAll({}).then(function(posts) {
+      res.render("search", {
+        msg: "Welcome back to the Coffee House!",
+        post: posts
+      });
+    });
+  });
 
   // Render 404 page for any unmatched routes
 //   app.get("*", function(req, res) {
