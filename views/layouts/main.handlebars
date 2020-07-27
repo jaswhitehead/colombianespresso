@@ -22,24 +22,24 @@
 </head>
 
 <body>
-	<nav class="black" role="navigation">
-		<div class="nav-wrapper container">
+	<div class="navbar-fixed">		
+		<nav class="nav-wrapper white">			
 			<div class="left">
-				<a id="logo-container" href="/" class="brand-logo"><img src="images/logo2.jpg" class="responsive-img"></a>
+				<a id="logo-container" href="/" class="brand-logo" style="color:black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+					<img src="images/logo2.jpg" class="responsive-img">&nbsp; Welcome Back to the Coffee House!</a>
 			</div>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="/login">Login / Sign Up</a></li>
+					<li><a href="/login"; style="color:black;">Login / Sign Up</a></li>
 				</ul>
 				<ul class="right hide-on-med-and-down" id="#nav_menu">
-                    <li><a class="nav_button" href="#" style="font-size: x-large;">News Feed</a></li>
-                    <li><a class="nav_button" href="/classifieds" style="font-size: x-large;">Classifieds</a></li>
-                    <li><a class="nav_button" href="/search" style="font-size: x-large;">Job Search</a></li>
-        		</ul>
-			</div>
-		</div>				
-		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
-		</div>
-    </nav>
+                    <li><a class="nav_button" href="/" style="font-size: x-large; color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">News Feed</a></li>
+                    <li><a class="nav_button" href="/classifieds" style="font-size: x-large;  color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Classifieds</a></li>
+                    <li><a class="nav_button" href="/search" style="font-size: x-large;  color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Job Search</a></li>
+        		</ul> 
+			</div>		
+    	</nav>
+	</div>
+
 	{{{ body }}}
 
 	<div class="parallax-container valign-wrapper">
@@ -61,29 +61,31 @@
            <p class="grey-text text-lighten-4">We are a team of students from Vanderbilt Bootcamp working on this project like it's our 
              full time job. We love to code and are always looking for better and more innovatie ways to improve our applications.</p>
         </div>    
+        
         <div class="col l3 s12">
+          <h5 class="white-text"><u>Site Map</u></h5>
+          <ul>
+            <li><a class="white-text" href="/">News Feed</li>
+            <li><a class="white-text" href="/classifieds">Classifieds</a></li>
+            <li><a class="white-text" href="/search">Job Search</a></li>
+            <li><a class="white-text" href="/login">Login / Sign Up</a></li>
+          </ul>
+        </div>
+
+		<div class="col l3 s12">
           <h5 class="white-text"><u>Connect</u></h5>
           <ul>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">LinkedIn</a></li>
-            <li><a class="white-text" href="#!">Email Us</a></li>
-            <li><a class="white-text" href="#!">GitHub</a></li>
+            <li><a class="white-text" target="blank" href="mailto:jaswhitehead@gmail.com">Email Us</a></li>
+            <li><a class="white-text" target="blank" href="https://github.com/jaswhitehead/colombianespresso">GitHub Repo</a></li>
+			<li><a class="white-text" target="blank" href="https://bootcamps.vanderbilt.edu/coding/">Vanderbilt Bootcamp</a></li>
           </ul>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Site Navigation</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
+
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Built by: <a class="brown-text text-lighten-3" href="http://materializecss.com">Anthony, Mason, Tyree & JSON</a>
+      Built by: <a target="_blank" class="brown-text text-lighten-3" href="https://github.com/jaswhitehead/colombianespresso">Anthony, Mason, Tyree & JSON</a>
       </div>
     </div>
   </footer>
