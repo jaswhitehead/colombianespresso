@@ -49,7 +49,15 @@ module.exports = function(app) {
       });
     });
   });
+//load login
+  app.get("/login", function(request, response) {
+    response.render("login");
+  });
 
+  //load signup
+  app.get("/signup", function(request, response) {
+    response.render("signup");
+  });
   // Render 404 page for any unmatched routes
 //   app.get("*", function(req, res) {
 //     res.render("404");

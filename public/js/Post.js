@@ -76,7 +76,7 @@ var handleFormSubmit = function(event) {
   };
 
   if (!(socialPost.post_title && socialPost.post_body)) {
-    alert("You must enter an example text and description!");
+    alert("You must enter a text and description!");
     return;
   }
 
