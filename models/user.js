@@ -1,6 +1,6 @@
 // //creating a user
 module.exports = function (sequelize, DataTypes) {
-  var createUser = sequelize.define("User", {
+  var User = sequelize.define("User", {
     username: { 
       //type of data and validation for each column in the table
       type: DataTypes.TEXT,
@@ -12,5 +12,21 @@ module.exports = function (sequelize, DataTypes) {
     },
     userID: DataTypes.INTEGER
   });
-  return createUser;
+
+  User.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    User.hasMany(models.createPost, {onDelete: "cascade"},);
+  };
+  User.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    User.hasMany(models.Classified,{onDelete:"cascade"},);
+  };
+
+
+
+  
+
+  return User;
 };

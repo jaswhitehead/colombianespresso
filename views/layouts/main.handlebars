@@ -12,22 +12,91 @@
   <!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="/public/styles/styles.css" type="text/css">
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<!-- Materialize minified CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<!-- Javascript -->
-		<script src="/public/js/index.js"></script>
-		<!-- Materialize minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>	
-		<!-- Font Awesome Icons -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<title>Colombian Espresso</title>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="/styles/styles.css" type="text/css">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Materialize minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	
 </head>
 
 <body>
+	<div class="navbar-fixed">		
+		<nav class="nav-wrapper white">			
+			<div class="left">
+				<a id="logo-container" href="/" class="brand-logo" style="color:black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+					<img src="images/logo2.jpg" class="responsive-img">&nbsp; Welcome Back to the Coffee House!</a>
+			</div>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="/login"; style="color:black;">Login / Sign Up</a></li>
+				</ul>
+				<ul class="right hide-on-med-and-down" id="#nav_menu">
+                    <li><a class="nav_button" href="/" style="font-size: x-large; color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">News Feed</a></li>
+                    <li><a class="nav_button" href="/classifieds" style="font-size: x-large;  color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Classifieds</a></li>
+                    <li><a class="nav_button" href="/search" style="font-size: x-large;  color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Job Search</a></li>
+        		</ul> 
+			</div>		
+    	</nav>
+	</div>
+
 	{{{ body }}}
+
+	<div class="parallax-container valign-wrapper">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+				<h5 class="black-text">We are always brewing up new ideas to keep your life fresh and new!</h5>
+				</div>
+			</div>
+		</div>
+		<div class="parallax"><img src="/images/background3.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+
+  <footer class="page-footer brown">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text"><u>Team Bio</u></h5>
+           <p class="grey-text text-lighten-4">We are a team of students from Vanderbilt Bootcamp working on this project like it's our 
+             full time job. We love to code and are always looking for better and more innovatie ways to improve our applications.</p>
+        </div>    
+        
+        <div class="col l3 s12">
+          <h5 class="white-text"><u>Site Map</u></h5>
+          <ul>
+            <li><a class="white-text" href="/">News Feed</li>
+            <li><a class="white-text" href="/classifieds">Classifieds</a></li>
+            <li><a class="white-text" href="/search">Job Search</a></li>
+            <li><a class="white-text" href="/login">Login / Sign Up</a></li>
+          </ul>
+        </div>
+
+		<div class="col l3 s12">
+          <h5 class="white-text"><u>Connect</u></h5>
+          <ul>
+            <li><a class="white-text" target="blank" href="mailto:jaswhitehead@gmail.com">Email Us</a></li>
+            <li><a class="white-text" target="blank" href="https://github.com/jaswhitehead/colombianespresso">GitHub Repo</a></li>
+			<li><a class="white-text" target="blank" href="https://bootcamps.vanderbilt.edu/coding/">Vanderbilt Bootcamp</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Built by: <a target="_blank" class="brown-text text-lighten-3" href="https://github.com/jaswhitehead/colombianespresso">Anthony, Mason, Tyree & JSON</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
