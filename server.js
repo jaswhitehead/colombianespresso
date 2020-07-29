@@ -6,6 +6,8 @@ var Handlebars = require('handlebars')
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+const passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var db = require("./models");
 
@@ -23,6 +25,11 @@ app.use(session({
 }));
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
 // Handlebars
 app.engine(
   "handlebars",
@@ -37,6 +44,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes-createPost")(app);
 require("./routes/apiRoutes-classifieds")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/api-login")(app, passport);
 
 var syncOptions = { force: false };
 
@@ -46,41 +54,37 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
+//passport login authentication
+passport.serializeUser(function (users, done) {
+	return done(null, users.id);
+	
 
-//Login stuff?
- //login route
- app.get("/login", function(request, response) {
-  response.render("login");
 });
-app.post('/auth', function(request, response) {
-	var username = request.body.username;
-	var password = request.body.password;
-	if (username && password) {
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
-				request.session.loggedin = true;
-				request.session.username = username;
-				response.redirect('/home');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
-});
+passport.deserializeUser(function(user, done) {
+	done(null, user);
+  });
 
-app.get('/', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
+//checking stuff
+passport.use(new LocalStrategy({
+    username: ' ',
+    user_password: ' '
+  },
+  function(username, password, done) {
+	db.User.findOne({ where: { username: username, user_password: password } })
+	.then(function (users) {
+		if (!users) {
+			return done(null, false, { message: 'Incorrect username.' });
+			
+		}
+		else if (!users.user_password === password) {
+			return done(null, false, { message: 'Incorrect password.' });
+		}
+		return done(null, users);
+	})
+	.catch(err => done(err));
+}
 
+));
 
 
 // Starting the server, syncing our models ------------------------------------/
