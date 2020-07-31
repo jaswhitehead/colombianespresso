@@ -14,7 +14,7 @@ var city = "Murfreesboro"
 //     var city = $("#search-term").val();
 
 
-$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=", function(data) {
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "", function(data) {
     console.log(data);
 
     var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
