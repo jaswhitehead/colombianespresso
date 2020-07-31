@@ -40,10 +40,10 @@ module.exports = function(app) {
     });
   });
 
-   // Load Job Search Page
-   app.get("/search", function(req, res) {
+  // Load Local News Page
+   app.get("/news", function(req, res) {
     db.createPost.findAll({}).then(function(posts) {
-      res.render("search", {
+      res.render("news", {
         msg: "Welcome back to the Coffee House!",
         post: posts
       });
