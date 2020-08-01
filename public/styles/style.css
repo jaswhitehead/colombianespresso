@@ -1,6 +1,6 @@
 .list-group-item {
   background-color: rgb(236,208,168);
-  border: rgb(165,100,37);
+  border: rgb(139,72,11);
   border-style: ridge;
   border-width: 5px;
   margin: 5px;
@@ -12,18 +12,23 @@
 }
 
 body{
-  background-color: rgb(214,192,178);
+  background-color: rgb(209,198,171);
 }
 
 form{
   background-color: rgb(236,208,168);
-  border: rgb(165,100,37);
+  border: rgb(139,72,11);
   border-style: ridge;
   border-width: 5px;
 }
 
 .head-font{
   font-family: 'Cinzel', serif;
+  background-color: rgb(97,83,73);
+  color: white;
+  border: rgb(139,72,11);
+  border-style: ridge;
+  border-width: 5px;
 }
 
 .title-font{
