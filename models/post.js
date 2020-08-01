@@ -11,6 +11,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     userID: DataTypes.INTEGER
+  },{
+    timestamps: false
   });
   return createPost;
 };
