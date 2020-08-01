@@ -1,6 +1,8 @@
 console.log("Keys loaded");
 
-exports.spotify = {
+let dontenv.config();
+
+module.exports = {
     id: process.env.WEATHER_ID,
   };
   
