@@ -1,5 +1,8 @@
 <body>
-    <form class="clearfix mb-4" action="POST">
+
+
+
+    <form class="clearfix mb-4" action="/api/signup" method="POST">
         <div class="form-group">
             <h4>Create Your User:</h4>
             <br>
@@ -13,11 +16,18 @@
             <label for="user_password">
                 <h6><strong>Password:</strong></h6>
             </label>
-            <textarea class="form-control" id="password" aria-describedby="example-description"
-                placeholder="Enter Password"></textarea>
+            <input type="text" id="password" class="form-control" aria-describedby="example-text"
+                >
         </div>
-        <button id="submit" class="btn btn-primary float-right">Submit</button>
-    </form>
-</body>
+        <button onclick="myFunction()" id="submit-user" class="btn btn-primary float-right">Submit</button>
 
-<script type="text/javascript" href="js/passport"></script>
+    </form>
+
+
+
+<script>
+function myFunction() {
+  location.replace("/login")
+}
+</script>
+</body>

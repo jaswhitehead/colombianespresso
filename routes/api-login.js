@@ -1,25 +1,27 @@
 //Login stuff?
- //login route
- var db = require("../models");
-const passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-
- module.exports = function(app)
- //authentication
- { app.post('/login',   passport.authenticate('local', { successRedirect: '/',
-        failureRedirect: '/login',
-        })
-);
+//login route
+var db = require("../models");
+const passport = require("passport");
+var LocalStrategy = require("passport-local").Strategy;
 
 
-// Create a new user
-app.post("/api/signup", function(req, res) {
+module.exports = function(app) //authentication
+{
+  app.post(
+    "/login",
+    passport.authenticate("local", {
+      successRedirect: "/",
+      failureRedirect: "/login",
+    })
+  );
+
+  // Create a new user
+  app.post("/api/signup", function(req, res) {
     db.User.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
   });
-}
-
+};
 
 //  app.post('/auth', function(request, response) {
 // 	var username = request.body.username;
@@ -36,11 +38,10 @@ app.post("/api/signup", function(req, res) {
 // 		response.redirect('/');
 // 	} else {
 // 		response.send('Incorrect Username and/or Password!');
-// 	}			
+// 	}
 // 	response.end();
 // });
 // });
-
 
 // app.post('/auth', function(request, response) {
 // 	var username = request.body.username;
@@ -53,7 +54,7 @@ app.post("/api/signup", function(req, res) {
 // 				response.redirect('/home');
 // 			} else {
 // 				response.send('Incorrect Username and/or Password!');
-// 			}			
+// 			}
 // 			response.end();
 // 		});
 // 	} else {

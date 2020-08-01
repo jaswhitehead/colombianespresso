@@ -1,32 +1,43 @@
-var API = {
-    saveExample: function(socialPost) {
+$(document).ready(function(){
+
+
+
+var $submitBtn = $("#submit-user");
+
+var APIsignUp = {
+    saveExample: function(user) {
       return $.ajax({
         headers: {
           "Content-Type": "application/json"
         },
         type: "POST",
         url: "api/signup",
-        data: JSON.stringify(socialPost)
+        data: JSON.stringify(user)
       });
     }
 }
 
-var handleFormSubmit = function(event) {
+var handleFormSubmitSignUp = function(event) {
     event.preventDefault();
   
     var addUser = {
       username: $("#username").val().trim(),
       user_password: $("#password").val().trim(),
     };
-  
-    if (!(addUser.username && addUser.user_password)) {
+
+  console.log(addUser);
+
+    if (!addUser.username && !addUser.user_password) {
       alert("You must enter an example text and description!");
       return;
     }
   
-    API.saveExample(addPost).then(function() {
-    });
+    APIsignUp.saveExample(addUser)
   
     $("#username").val("");
     $("#password").val("");
   };
+
+  $submitBtn.on("click", handleFormSubmitSignUp);
+
+});
