@@ -14,8 +14,6 @@ var city = "Murfreesboro"
 //     var city = $("#search-term").val();
 
 
-
-
 $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "", function(data) {
     console.log(data);
 
