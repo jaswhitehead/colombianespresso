@@ -18,8 +18,8 @@
         <!-- Social Media Block -->
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons"><a href="#home" style=color:saddlebrown>group</i></a></h2>
-            <h5 class="center"><a href="#home" style=color:black>Give A Shout Out To Your Peeps!</a></h5>
+            <h2 class="center brown-text"><a href="#home" style=color:saddlebrown><i class="material-icons">group</i></a></h2>
+            <h5 class="center" class="head-font"><a href="#home" style=color:black>Give A Shout Out To Your Peeps!</a></h5>
 
             <p class="light">We want our users to find it fast and easy to post a status and see what their friends 
               are saying in a quick and easy to use environment. Get to know your friends with messages of 255 characters or less.</p>
@@ -29,10 +29,10 @@
          <!-- Classifieds and Personl Ads Block -->
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons"><a href="/classifieds" style=color:saddlebrown>newspaper</i></a></h2>
-            <h5 class="center"><a href="/classifieds" style=color:black>Post Personal / Classified Ads</a></h5>
+            <h2 class="center brown-text"><a href="/classifieds" style=color:saddlebrown><i class="material-icons">newspaper</i></a></h2>
+            <h5 class="center" class="head-font"><a href="/classifieds" style=color:black>Post Personal / Classified Ads</a></h5>
 
-            <p class="light">If you want to get rid of old furniture, find someone to clean your home or announce a yard sale your hosting, our
+            <p class="light">If you want to get rid of old furniture, find someone to clean your home or announce a yard sale you're hosting, our
               classifieds are the right place to start. We provide a streamlined process for getting the word out about anything and 
               everything you are looking to post. 
             </p>
@@ -42,10 +42,9 @@
         <!-- Job Search Block -->
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><a href="/search" style=color:saddlebrown><i class="material-icons">flash_on</i></a></h2>
-            <h5 class="center"><a href="/search" style=color:black>Get Your Dream Job In A Flash &nbsp;&nbsp;</a></h5>
-            <p class="light">Are you ready to find work? Just finishing up a grueling bootcamp and excited to get out into the workforce? 
-              Take a walk on our job search API and get into the career of your dreams. What are you waiting for......Start today!
+            <h2 class="center brown-text"><a href="/search" style=color:saddlebrown><i class="material-icons">satellite</i></a></h2>
+            <h5 class="center"class="head-font"><a href="/search" style=color:black>Weather and News at the push of a button! &nbsp;&nbsp;</a></h5>
+            <p class="light">Planning an outdoor event? Getting updates on your local news? Colombian Espresso has got you covered! At a single press of a button you can search for any city's local news and weather!
             </p>
           </div>
         </div>
@@ -60,7 +59,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="center" style="align: center">
-          <h5 class="align center" style="color:white;">The future of hanging out, posting classifieds and conducting your job search</h5>
+          <h5 class="align center" style="color:white;" class="head-font">The future of hanging out, posting classifieds and conducting your job search</h5>
         </div>
       </div>
     </div>
@@ -72,31 +71,26 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h2>Welcome Back to the Coffee House!</h2>
+        <h2 class="head-font">Welcome Back to the Coffee House!</h2>
         <form class="clearfix mb-4" action="/api/post" method="POST">
           <div class="form-group">
-            <h4>Share Your Thoughts:</h4>
+            <h4 class="head-font">Share Your Thoughts:</h4>
             <br><br>
             <h6><strong>Enter Title:</strong></h6>
             <input type="text" id="post-title" class="form-control" aria-describedby="example-text" placeholder="Enter Post Title Here">
           </div>
           <div class="form-group">
             <h6><strong>Enter Post:</strong></h6>
-            <textarea class="form-control" id="post-body" aria-describedby="example-description" placeholder="What's On Your Mind?"></textarea>
+            <input class="form-control" id="post-body" aria-describedby="example-description" placeholder="What's On Your Mind?">
           </div>
-          <div class="form-group">
-              <label for="category">Select User:</label>
-              <select class="custom-select" id="User">
-              </select>
-            </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>News Feed:</h3>
+        <h3 class="head-font">News Feed:</h3>
         <ul id="example-list" class="list-group">
           {{#each post}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="post/{{this.id}}">{{this.post_title}}</a>
-            <p>{{this.post_body}}</p>
+            <a class="title-font" href="post/{{this.id}}">{{this.post_title}}</a>
+            <p class="other-font">{{this.post_body}}</p>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}

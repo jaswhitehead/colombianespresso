@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-8 offset-2">
                 <h1>{{msg}}</h1>
-                <h2>Personals / Classifieds</h2>
+                <h2 class="head-font">Personals / Classifieds</h2>
                 <form class="clearfix mb-4" action="POST">
                     <div class="form-group">
                         <h4>Create Your Ad:</h4>
@@ -39,21 +39,16 @@
                         <textarea class="form-control" id="add-price" aria-describedby="example-description"
                             placeholder="ex. $150 (obo)"></textarea>
                     </div>
-                    <div class="form-group">
-              <label for="category">Select User:</label>
-              <select class="custom-select" id="User">
-              </select>
-            </div>
                     <button id="submit-classifieds" class="btn btn-primary float-right">Submit</button>
                 </form>
-                <h3>Examples:</h3>
+                <h3 class="head-font">Classifieds:</h3>
                 <ul id="example-list" class="list-group">
                     {{#each add}}
                     <li data-id="{{this.id}}" class="list-group-item">
-                        <a href="classifieds/{{this.id}}">{{this.listing_name}}</a>
-                        <p>{{this.listing_description}}</p>
-                        <p>{{this.listing_location}}</p>
-                        <p>{{this.price}}</p>
+                        <a class="title-font" href="classifieds/{{this.id}}">{{this.listing_name}}</a>
+                        <p class="other-font">Description: {{this.listing_description}}</p>
+                        <p class="other-font">Location: {{this.listing_location}}</p>
+                        <p class="other-font">Price: ${{this.price}}</p>
                         <button class="btn btn-danger float-right delete">ｘ</button>
                     </li>
                     {{/each}}
