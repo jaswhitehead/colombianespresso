@@ -44,3 +44,19 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+.weather-container {
+  background: rgb(209, 198, 171);
+  text-align: center;
+}
+
+.weather {
+  font-size: 22px;
+  margin: 0;
+}
+
+.temp {
+  font-size: 60px;
+  margin: 0;
+  font-weight: bold;
+}
