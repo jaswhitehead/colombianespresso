@@ -1,7 +1,8 @@
 var url = 'http://newsapi.org/v2/top-headlines?' +
           'country=us&' +
-          'apiKey=034dc2010367468aa852b280196c5191';
-var req = new Request(url);
+          '';
+          var req = new Request(url);
+
 fetch(req)
     .then(function(response) {
         console.log(response.json());
