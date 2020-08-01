@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       min: 0
     },
-    userID: DataTypes.INTEGER
+    user_ID: DataTypes.INTEGER
   });
   return Classified;
 };
