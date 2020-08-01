@@ -60,3 +60,8 @@ footer.page-footer {
   margin: 0;
   font-weight: bold;
 }
+
+.news-container {
+  background: rgb(209, 198, 171);
+  text-align: center;
+}

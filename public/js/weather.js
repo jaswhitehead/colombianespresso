@@ -8,6 +8,7 @@
 
 // Attempt at making submit button work
 // var city = "";
+
 $(document).ready(function(){
 $("#search_button").on("click", function(event){
     event.preventDefault();
@@ -19,6 +20,7 @@ $("#search_button").on("click", function(event){
     $(".windSpeed").text("");
     $(".humidity").text("");
 console.log(city)
+
 
 $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=2bb930dcd6a209c3048a37004c1534d6", function(data) {
     console.log(data);
@@ -41,8 +43,3 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=i
     $('.humidity').append(humidity + '%');
 
 
-})
-
-})
-
-})
