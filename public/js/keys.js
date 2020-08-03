@@ -1,6 +1,6 @@
 console.log("Keys loaded");
 
-exports.spotify = {
+module.exports = {
     id: process.env.WEATHER_ID,
   };
   
